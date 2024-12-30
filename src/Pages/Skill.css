@@ -1,0 +1,97 @@
+.skills-section {
+    padding: 40px;
+    background-color: #16185c; /* Dark background */
+    color: white; /* Text color */
+    text-align: center;
+    min-height: 200vh; /* Ensures scrolling for animations */
+
+  }
+  
+  .skills-heading {
+    font-size: 2rem;
+    color: #0ef;
+    margin-bottom: 40px;
+  }
+  
+
+
+  .custom-steps .ant-steps-item-title , .ant-steps-item-description {
+    color: white !important;
+  }
+  
+ 
+  
+  .custom-steps .ant-steps-item-process .ant-steps-item-icon,
+  .custom-steps .ant-steps-item-finish .ant-steps-item-icon {
+    background-color: #0ef !important; 
+  }
+  
+  .custom-steps .ant-steps-item-process .ant-steps-item-icon > .ant-steps-icon {
+    color: #16185c;
+  }
+  
+  .progress-section {
+    margin-top: 20px;
+  }
+  
+  .ant-progress {
+    margin-bottom: 10px;
+  }
+  
+  .ant-progress-bg {
+    background-color: #0ef !important;
+  }
+  .ant-progress-inner{
+    color: #fff !important;
+  }
+  .ant-progress-text, .ant-progress-text-end, .ant-progress-text-outer{
+    color: #0ef !important;
+  }
+  .custom-steps img{
+
+        width: 50px;
+        margin-left: 50px;
+        
+  }
+  .items-div {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .progress-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5%;
+    max-width: 100%;
+  }
+  
+  .progress-item img {
+    width: 40px; /* Adjust as needed */
+    height: 40px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    /* For tablet and mobile devices */
+    .progress-item {
+      flex-direction: column; /* Stack the progress bar and image vertically */
+      width: 100%; /* Make progress items fill the width */
+      margin-bottom: 15px;
+    }
+  
+    .progress-item img {
+      margin-top: 10px; /* Add some space between the progress bar and image */
+    }
+  
+    .progress-item .ant-progress {
+      width: 100% !important; /* Ensure progress bars take full width */
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    /* For smaller mobile devices */
+    .progress-item img {
+      width: 30px; /* Smaller image size for mobile */
+      height: 30px;
+    }
+  }
