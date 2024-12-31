@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 .home-component {
-    background-color: #16185c;
+ background-color:   #16185c;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -9,6 +9,7 @@
     flex-wrap: wrap;
     padding-top: 10%;
     font-family: "Nunito", serif;
+    min-height: 100vh;
   }
   
   #content {
@@ -36,6 +37,42 @@
     box-shadow: 5px 0px 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 0.6);
     object-fit: cover;
   }
+
+
+  .icons{
+
+    display: flex;
+    width: 70%;
+    justify-content: space-evenly;
+  }
+
+  .icons svg{
+    width: 50px;
+    height: 50px;
+  }
+
+  .icons a {
+    position: relative;
+    display: inline-block;
+    margin: 0 10px; 
+    text-decoration: none; 
+  }
+  
+  .icons a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; 
+    height: 2px; 
+    background-color: #0ef;
+    transition: width 0.5s ease-in-out;
+  }
+  
+  .icons a:hover::after {
+    width: 100%; 
+  }
+  
   
 
 

@@ -29,8 +29,8 @@ const navItems = [
   { label: "Home", icon: <HomeIcon />, target: "home-section" },
   { label: "About", icon: <InfoIcon />, target: "about-section" },
   { label: "Skills", icon: <DevicesIcon />, target: "skills-section" },
-  { label: "Contact", icon: <ContactMailIcon />, target: "contact-section" },
   { label: "Resume", icon: <DataObjectIcon />, target: "resume-section" },
+  { label: "Contact", icon: <ContactMailIcon />, target: "contact-section" },
 ];
 
 const Navbar = (props) => {
@@ -66,7 +66,7 @@ const Navbar = (props) => {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav" sx={{ backgroundColor: "#16185c" }}>
+      <AppBar component="nav" sx={{ backgroundColor: "transparent" }}>
         <Toolbar>
           <IconButton
             color="inherit"

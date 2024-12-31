@@ -4,20 +4,27 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './Component/Navbar'
 import Home from './Pages/Home'
-import About from './Pages/About'
+
 import Skill from './Pages/Skill'
+import About from './Pages/About'
 
 function App() {
 
 
   return (
     <>
+    <div className='mainDiv'>
+    <header style={{  zIndex : 1}}>
       <Navbar/>
-     <body style={{backgroundColor : "#16185c" , minHeight : "100vh"}}>
-     <Home/>
-   
+      </header>
+  
+    <div style={{backgroundColor : " #16185c"}}>
+    <Home/>
+    <About/>
      <Skill/>
-     </body>
+    </div>
+  
+    </div>
     </>
   )
 }
