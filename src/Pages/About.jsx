@@ -1,38 +1,93 @@
-import React from 'react'
+import React from 'react';
+import { motion } from 'framer-motion';
 import './About.css';
-import { Flex } from 'antd';
+import { FaCode, FaServer, FaMobile, FaDatabase } from 'react-icons/fa';
+
 const About = () => {
+  const aboutPoints = [
+    {
+      icon: <FaCode />,
+      title: "Frontend Development",
+      description: "Specializing in React, Next.js, and modern JavaScript frameworks to create responsive and interactive user interfaces."
+    },
+    {
+      icon: <FaServer />,
+      title: "Backend Development",
+      description: "Experienced in building robust APIs and server-side applications using ASP.NET Core and Node.js."
+    },
+    {
+      icon: <FaDatabase />,
+      title: "Database Management",
+      description: "Proficient in both SQL (MySQL, SQL Server) and NoSQL (MongoDB) database systems."
+    },
+    {
+      icon: <FaMobile />,
+      title: "Full Stack Solutions",
+      description: "Capable of delivering end-to-end solutions from concept to deployment and maintenance."
+    }
+  ];
+
   return (
-  
-    
-      <div className='about-section'>
-  <h1 style={{textAlign : "center" , color : "#0ef"}}>About Me</h1>
-        <div className='aboutdiv'>
-
-      
-  <p>
-    Hello, I'm Sanjeev, a passionate Full Stack Web Developer with a deep understanding of both front-end and back-end technologies. With experience in building scalable and efficient web applications, I specialize in the MERN stack (MongoDB, Express.js, React, Node.js), MEAN stack (MongoDB, Express.js, Angular, Node.js), and ASP.NET. I am committed to creating dynamic, responsive, and high-performance applications that provide seamless user experiences and meet modern business needs.
-  </p>
-  <p>
-    Over the years, I have developed a wide range of skills, from crafting beautiful user interfaces to building powerful server-side logic. I take pride in my ability to solve complex problems and turn ideas into reality. Whether it's creating APIs, designing intuitive front-end designs, or managing databases, I have the expertise to handle it all.
-  </p>
-  <p>
-    In addition to my technical skills, I am always focused on keeping myself updated with the latest trends in the development world. I believe in writing clean, efficient code, and I am a strong advocate for Agile development practices, which ensure faster delivery and continuous improvement.
-  </p>
-  <p>
-    As a developer, my goal is to create meaningful solutions that drive business success. I collaborate closely with clients and teams to understand their vision, and I am dedicated to delivering high-quality products that exceed expectations. From start-ups to established enterprises, I enjoy working on projects of all sizes and always strive to make an impact with my work.
-  </p>
-  <p>
-    When I’m not coding, you’ll find me exploring new tech, reading, or working on personal projects that push my creativity. I’m always excited to take on new challenges and contribute to innovative projects. Let’s work together to bring your ideas to life!
-  </p>
-
-        </div>
-
+    <section id="about" className="about-section">
+      <div className="section-header">
+        <h1 className="section-title">About <span>Me</span></h1>
+        <p className="section-subtitle">Get to know me better</p>
       </div>
-    
+      
+      <div className="about-container">
+        <motion.div 
+          className="about-content"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="about-title">Who am I?</h2>
+          <p className="about-text">
+            I'm Sanjeev Kumar, a passionate Full Stack Developer based in Mumbai, India. 
+            With a strong foundation in computer science and hands-on experience in building 
+            web applications, I specialize in creating efficient, scalable, and user-friendly 
+            solutions.
+          </p>
+          <p className="about-text">
+            My journey in software development began during my college years, and since then 
+            I've worked on various projects ranging from e-commerce platforms to template 
+            generators. I'm particularly interested in solving complex problems and 
+            implementing clean, maintainable code.
+          </p>
+          <p className="about-text">
+            When I'm not coding, you can find me playing chess, exploring new technologies, 
+            or contributing to open-source projects. I believe in continuous learning and 
+            staying updated with the latest industry trends.
+          </p>
+        </motion.div>
+        
+        <motion.div 
+          className="about-skills"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="about-title">What I Do</h2>
+          <div className="skills-grid">
+            {aboutPoints.map((point, index) => (
+              <motion.div 
+                key={index}
+                className="skill-card"
+                whileHover={{ y: -10 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="skill-icon">{point.icon}</div>
+                <h3 className="skill-title">{point.title}</h3>
+                <p className="skill-description">{point.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
 
-
-  )
-}
-
-export default About
+export default About;

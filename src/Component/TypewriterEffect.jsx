@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-// Import and register the TextPlugin
 import { TextPlugin } from 'gsap/TextPlugin';
 
 gsap.registerPlugin(TextPlugin);
@@ -9,49 +8,31 @@ const TypewriterEffect = () => {
   const textRef = useRef();
 
   useEffect(() => {
-    
     const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
 
-    tl.fromTo(
-      textRef.current,
-      { text: '' },  
-      {
-        text: 'My name is Sanjeev',  
-        duration: 3,  
-        ease: 'none', 
-      }
-    )
-    .to(
-      textRef.current,
-      {
-        text: '',  
-        duration: 2,  
-        ease: 'none',  
-      }
-    )
-    .to(
-      textRef.current,
-      {
-        text: 'I am a Full Stack Developer', 
-        duration: 3, 
-        ease: 'none', 
-      }
-    )
-    .to(
-      textRef.current,
-      {
-        text: '',  
-        duration: 2,  
-        ease: 'none',  
-      }
-    );
+    tl.to(textRef.current, {
+      text: 'I build things for the web.',
+      duration: 2.5,
+      ease: 'none',
+    })
+      .to(textRef.current, {
+        text: '',
+        duration: 1,
+        ease: 'none',
+      })
+      .to(textRef.current, {
+        text: 'I build apps too.',
+        duration: 2.5,
+        ease: 'none',
+      })
+      .to(textRef.current, {
+        text: '',
+        duration: 1,
+        ease: 'none',
+      });
   }, []);
 
-  return (
-    <div>
-      <h1 ref={textRef}></h1>
-    </div>
-  );
+  return <h2 ref={textRef} className="home-subtitle-large typewriter-text"></h2>;
 };
 
 export default TypewriterEffect;

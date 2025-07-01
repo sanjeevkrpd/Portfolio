@@ -1,32 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Navbar from './Component/Navbar'
-import Home from './Pages/Home'
-
-import Skill from './Pages/Skill'
-import About from './Pages/About'
+import { motion } from 'framer-motion';
+import './App.css';
+import Navbar from './Component/Navbar';
+import Home from './Pages/Home';
+import Skill from './Pages/Skill';
+import About from './Pages/About';
+import Resume from './Pages/Resume';
+import Contact from './Pages/Contact';
+import { useState } from 'react';
 
 function App() {
-
+  const [activeSection, setActiveSection] = useState('home');
 
   return (
-    <>
-    <div className='mainDiv'>
-    <header style={{  zIndex : 1}}>
-      <Navbar/>
+    <div className="portfolio-container">
+      <header style={{ zIndex: 100 }}>
+        <Navbar />
       </header>
-  
-    <div style={{backgroundColor : " #16185c"}}>
-    <Home/>
-    <About/>
-     <Skill/>
+      
+      <main>
+       <Home id="home" setActiveSection={setActiveSection} />
+        <About id="about" />
+        <Skill id="skills" />
+        <Resume id="resume" />
+        <Contact id="contact" />
+      </main>
+      
+      <footer className="footer">
+        <p>© {new Date().getFullYear()} Sanjeev Kumar. All rights reserved.</p>
+      </footer>
     </div>
-  
-    </div>
-    </>
-  )
+  );
 }
 
-export default App
+export default App;
