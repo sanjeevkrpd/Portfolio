@@ -1,0 +1,286 @@
+.resume-section {
+  background: linear-gradient(to bottom, #0f172a, #141f32);
+}
+
+.resume-download {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1.1rem 2.5rem;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(59,130,246,0.35);
+  transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(59,130,246,0.45);
+}
+
+.resume-block {
+  margin-bottom: 6rem;
+}
+
+.block-header {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin-bottom: 2.5rem;
+}
+
+.block-icon {
+  font-size: 2.3rem;
+  color: #3b82f6;
+}
+
+.block-header h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+/* Experience List */
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.experience-item {
+  padding: 2rem;
+  border-radius: 14px;
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.exp-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.exp-period {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(59,130,246,0.12);
+  color: #60a5fa;
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+
+.exp-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-bottom: 1.3rem;
+  color: #94a3b8;
+  font-size: 0.98rem;
+}
+
+.company {
+  font-weight: 600;
+  color: #60a5fa;
+}
+
+.achievements {
+  list-style: none;
+  margin-bottom: 1.6rem;
+}
+
+.achievements li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 0.9rem;
+  color: #cbd5e1;
+  font-size: 0.98rem;
+}
+
+.achievements li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.tech-tag {
+  padding: 0.45rem 1rem;
+  background: rgba(59,130,246,0.1);
+  color: #60a5fa;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  border: 1px solid rgba(59,130,246,0.25);
+}
+
+/* Education List */
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.education-item {
+  padding: 2rem;
+  border-radius: 14px;
+}
+
+.degree {
+  font-size: 1.38rem;
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+  color: #f1f5f9;
+}
+
+.edu-meta {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  color: #94a3b8;
+}
+
+.institution {
+  font-weight: 600;
+  color: #60a5fa;
+}
+
+.period {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.edu-details {
+  list-style: none;
+}
+
+.edu-details li {
+  position: relative;
+  padding-left: 1.6rem;
+  margin-bottom: 0.7rem;
+  color: #cbd5e1;
+}
+
+.edu-details li::before {
+  content: '•';
+  position: absolute;
+  left: 0.4rem;
+  color: #3b82f6;
+}
+
+/* Certifications Grid */
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.8rem;
+}
+
+.cert-item {
+  padding: 1.8rem 2rem;
+  border-radius: 14px;
+}
+
+.cert-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #f1f5f9;
+}
+
+.cert-meta {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  color: #94a3b8;
+  font-size: 0.96rem;
+}
+
+.issuer {
+  font-weight: 600;
+  color: #60a5fa;
+}
+
+.cert-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.cert-link:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+/* Horizontal Dividers */
+.horizontal-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent);
+  margin: 2rem 0 0;
+  opacity: 0.6;
+}
+
+.horizontal-divider.thin {
+  margin: 1.5rem 0 0;
+  background: linear-gradient(to right, transparent, rgba(59,130,246,0.18), transparent);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .resume-download {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .resume-block {
+    margin-bottom: 5rem;
+  }
+
+  .exp-header, .edu-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .experience-item, .education-item {
+    padding: 1.6rem;
+  }
+
+  .certifications-grid {
+    gap: 1.5rem;
+  }
+}
