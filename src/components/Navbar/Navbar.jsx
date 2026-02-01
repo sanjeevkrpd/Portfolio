@@ -75,78 +75,77 @@ const Navbar = () => {
   return (
     <>
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-        <div className="container">
-          <div className="nav-container">
-            {/* Logo */}
-            <motion.div 
-              className="logo"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>
-                <span className="logo-text">SK</span>
-                <span className="logo-name">Sanjeev</span>
-              </a>
-            </motion.div>
+        <div className="nav-container">
+          {/* Logo */}
+          <motion.div 
+            className="logo"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>
+              <span className="logo-text">SK</span>
+              <span className="logo-name">Sanjeev</span>
+            </a>
+          </motion.div>
 
-            {/* Desktop Navigation */}
-            <ul className="nav-links">
-              {navItems.map((item, index) => (
-                <motion.li
-                  key={item.id}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                >
-                  <button
-                    className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
-                    onClick={() => scrollToSection(item.id)}
-                    aria-label={item.label}
-                  >
-                    <span className="nav-icon">{item.icon}</span>
-                    <span className="nav-label">{item.label}</span>
-                    <span className="nav-indicator"></span>
-                  </button>
-                </motion.li>
-              ))}
-            </ul>
-
-            {/* Social Links & Menu Toggle */}
-            <div className="nav-right">
-              <div className="social-icons">
-                {socialLinks.map((link, index) => (
-                  <motion.a
-                    key={index}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={link.label}
-                    whileHover={{ y: -3 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="social-icon"
-                  >
-                    {link.icon}
-                  </motion.a>
-                ))}
-              </div>
-
-              <button
-                className="menu-toggle"
-                onClick={() => setIsOpen(!isOpen)}
-                aria-label="Toggle menu"
+          {/* Desktop Navigation */}
+          <ul className="nav-links">
+            {navItems.map((item, index) => (
+              <motion.li
+                key={item.id}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
               >
-                {isOpen ? <FiX /> : <FiMenu />}
-              </button>
+                <button
+                  className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
+                  onClick={() => scrollToSection(item.id)}
+                  aria-label={item.label}
+                >
+                  <span className="nav-icon">{item.icon}</span>
+                  <span className="nav-label">{item.label}</span>
+                  <span className="nav-indicator"></span>
+                </button>
+              </motion.li>
+            ))}
+          </ul>
+
+          {/* Social Links & Menu Toggle */}
+          <div className="nav-right">
+            <div className="social-icons">
+              {socialLinks.map((link, index) => (
+                <motion.a
+                  key={index}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.label}
+                  whileHover={{ y: -3 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="social-icon"
+                >
+                  {link.icon}
+                </motion.a>
+              ))}
             </div>
+
+            <button
+              className="menu-toggle"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+              aria-expanded={isOpen}
+            >
+              {isOpen ? <FiX /> : <FiMenu />}
+            </button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Fixed animation */}
         <motion.div
-          className="mobile-menu"
+          className={`mobile-menu ${isOpen ? 'open' : ''}`}
           initial={false}
-          animate={isOpen ? { height: 'auto' } : { height: 0 }}
+          animate={isOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: '100%' }}
           transition={{ duration: 0.3 }}
         >
           <div className="mobile-menu-content">
@@ -181,7 +180,11 @@ const Navbar = () => {
 
       {/* Overlay */}
       {isOpen && (
-        <div className="menu-overlay" onClick={() => setIsOpen(false)} />
+        <div 
+          className="menu-overlay" 
+          onClick={() => setIsOpen(false)}
+          aria-hidden="true"
+        />
       )}
     </>
   );
