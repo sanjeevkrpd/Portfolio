@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiDownload, FiBriefcase, FiBookOpen, FiAward, FiCalendar } from 'react-icons/fi';
-import resumePDF from '../../assets/sanjeev-resume.pdf';
+import resumePDF from '../../assets/sanjeev_resume.pdf';
 import './Resume.css';
 
 const Resume = () => {

@@ -1,62 +1,81 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiGithub, FiExternalLink, FiFolder } from 'react-icons/fi';
-import { FaReact, FaNodeJs, FaAws } from 'react-icons/fa';
-import { SiNextdotjs, SiDotnet, SiMongodb, SiPostgresql } from 'react-icons/si';
+import { FaReact, FaNodeJs, FaAws, FaJava, FaPython } from 'react-icons/fa';
+import { SiNextdotjs, SiDotnet, SiMongodb, SiPostgresql, SiExpress, SiRedux, SiAngular, SiJenkins, SiDocker, SiRedis } from 'react-icons/si';
 import './Projects.css';
 
 const Projects = () => {
   const projects = [
     {
-      title: 'Agri-Commerce Platform',
-      description: 'Full-stack agricultural marketplace with real-time inventory management, payment processing, and admin dashboard.',
-      longDescription: 'A comprehensive e-commerce platform for agricultural products featuring user authentication, product catalog, shopping cart, payment integration with Razorpay, and real-time order tracking.',
-      tech: ['ASP.NET Core', 'Next.js', 'SQL Server', 'Razorpay', 'AWS', 'Docker'],
-      github: 'https://github.com/Sanjeevkrpd/agri-platform',
-      live: 'https://agri-platform.demo',
+      title: 'Mahaaqromart E-Commerce Platform',
+      description: 'Production-grade e-commerce platform serving thousands of daily active users with secure payment processing and real-time inventory management.',
+      longDescription: 'Architect and developed scalable ASP.NET Core Web API backend services supporting production-level e-commerce operations. Implemented JWT-based authentication and Role-Based Access Control (RBAC) for secure API endpoints. Built responsive admin dashboard using React and Redux enabling real-time product, order, and inventory management. Integrated Razorpay payment gateway with webhook support for seamless transactions.',
+      tech: ['ASP.NET Core', 'React', 'SQL Server', 'Next.js', 'Redux', 'Jenkins', 'AWS EC2', 'Nginx', 'PM2'],
+      github: 'https://github.com/Sanjeevkrpd/mahaaqromart',
+      live: '#',
       featured: true,
       image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&auto=format&fit=crop'
     },
     {
-      title: 'Festival Template Generator',
-      description: 'Web application for creating and customizing festival greeting templates with preview and download functionality.',
-      longDescription: 'Interactive template generator allowing users to customize festival cards with names, messages, and designs. Features include real-time preview, multiple format downloads, and template management.',
-      tech: ['AngularJS', 'ASP.NET MVC', 'JavaScript', 'HTML5/CSS3', 'SQL Server'],
+      title: 'Visitor Management System',
+      description: 'Role-based visitor management system with structured approval workflows and real-time push notifications.',
+      longDescription: 'Built a comprehensive visitor management system supporting Admins, Security Officers, and Employees with structured approval workflows. Implemented real-time push notifications for approval/rejection updates and deployed as a Progressive Web App (PWA) on AWS EC2 with Nginx and PM2.',
+      tech: ['ASP.NET Core', 'SQL Server', 'PWA', 'AWS EC2', 'Nginx', 'PM2', 'Web Push Notifications'],
+      github: 'https://github.com/Sanjeevkrpd/visitor-management',
+      live: '#',
+      featured: false,
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop'
+    },
+    {
+      title: 'Theme Template Generator',
+      description: 'Dynamic festival greeting template generator with customization, preview, and download functionality.',
+      longDescription: 'Developed a dynamic festival greeting template generator enabling users to customize, preview, and download designs. Designed REST APIs using ASP.NET MVC for CRUD operations and built interactive frontend with AngularJS, HTML5, CSS3. Created normalized SQL Server database schemas for efficient template storage and retrieval.',
+      tech: ['ASP.NET MVC', 'AngularJS', 'JavaScript', 'HTML5/CSS3', 'SQL Server'],
       github: 'https://github.com/Sanjeevkrpd/template-generator',
-      live: 'https://templates.demo',
+      live: '#',
       featured: false,
       image: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=800&auto=format&fit=crop'
     },
     {
-      title: 'Portfolio Website',
-      description: 'Modern responsive portfolio website with smooth animations, dark mode, and contact form integration.',
-      longDescription: 'A personal portfolio website showcasing projects, skills, and experience. Features include responsive design, smooth animations with Framer Motion, contact form with EmailJS, and optimized performance.',
-      tech: ['React', 'Framer Motion', 'GSAP', 'EmailJS', 'CSS3'],
-      github: 'https://github.com/Sanjeevkrpd/portfolio',
-      live: 'https://sanjeevkumar.dev',
+      title: 'Notes Discussion Platform',
+      description: 'Full-stack platform for students to upload, download, and discuss notes with AWS S3 integration.',
+      longDescription: 'Built a full-stack platform supporting 100+ concurrent users for students to upload, download, and discuss notes. Features include JWT authentication, AWS S3 file uploads, and automated CI/CD pipeline.',
+      tech: ['Node.js', 'Express.js', 'MongoDB', 'React.js', 'JWT', 'AWS S3', 'CI/CD'],
+      github: 'https://github.com/Sanjeevkrpd/notes-discussion',
+      live: '#',
       featured: false,
-      image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&auto=format&fit=crop'
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop'
     },
     {
-      title: 'Task Management System',
-      description: 'Collaborative task management application with real-time updates, team collaboration, and progress tracking.',
-      longDescription: 'A comprehensive task management system featuring user authentication, project boards, task assignment, real-time notifications, file attachments, and progress analytics.',
-      tech: ['Node.js', 'React', 'MongoDB', 'Socket.io', 'Redis'],
-      github: 'https://github.com/Sanjeevkrpd/task-manager',
-      live: 'https://taskmanager.demo',
+      title: 'Wanderlust (Airbnb Clone)',
+      description: 'Property rental platform with listing management, booking system, and interactive maps integration.',
+      longDescription: 'Comprehensive property rental platform with listing and booking management. Features include Cloudinary image uploads, Mapbox maps integration, and Passport.js authentication following MVC architecture.',
+      tech: ['Node.js', 'Express.js', 'MongoDB', 'EJS', 'Cloudinary', 'Mapbox', 'Passport.js'],
+      github: 'https://github.com/Sanjeevkrpd/wanderlust',
+      live: '#',
       featured: false,
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop'
-    },
+      image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&auto=format&fit=crop'
+    }
   ];
 
   const techIcons = {
     'React': <FaReact />,
     'Next.js': <SiNextdotjs />,
     'Node.js': <FaNodeJs />,
+    'Express.js': <SiExpress />,
     'ASP.NET Core': <SiDotnet />,
+    'ASP.NET MVC': <SiDotnet />,
     'MongoDB': <SiMongodb />,
     'SQL Server': <SiPostgresql />,
-    'AWS': <FaAws />,
+    'AWS EC2': <FaAws />,
+    'AWS S3': <FaAws />,
+    'Jenkins': <SiJenkins />,
+    'Docker': <SiDocker />,
+    'Redis': <SiRedis />,
+    'Redux': <SiRedux />,
+    'AngularJS': <SiAngular />,
+    'PWA': <FaReact />,
   };
 
   return (
@@ -163,7 +182,7 @@ const Projects = () => {
             Check out my GitHub profile for more projects and contributions.
           </p>
           <a
-            href="https://github.com/Sanjeevkrpd"
+            href="https://github.com/sanjeevkprd"
             target="_blank"
             rel="noopener noreferrer"
             className="github-button"

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { FiArrowRight, FiDownload, FiChevronDown } from 'react-icons/fi';
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
 import profileImage from '../../assets/MyImage.png';
-import resumePDF from '../../assets/sanjeev-resume.pdf';
+import resumePDF from '../../assets/sanjeev_resume.pdf';
 import TypewriterEffect from '../TypewriterEffect/TypewriterEffect';
 import './Home.css';
 
